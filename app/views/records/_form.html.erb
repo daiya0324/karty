@@ -10,6 +10,26 @@
   </div>
 
   <div class="field">
+    <%= f.label :hoge, "カット" %><br />
+    <%= f.collection_select(:cut_id, Cut.all, :id, :name, {}, {class:"cut-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "カラー" %><br />
+    <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"color-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "パーマ" %><br />
+    <%= f.collection_select(:parm_id, Parm.all, :id, :name, {}, {class:"parm-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "トリートメント" %><br />
+    <%= f.collection_select(:treatment_id, Treatment.all, :id, :name, {}, {class:"treatment-select"}) %>
+  </div>
+
+  <div class="field">
     <%= f.label :hoge, "コンセプト" %><br />
     <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
   </div>
