@@ -1,42 +1,55 @@
 <%= form_with model: @record, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "名前" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name, id:"customer_name" %>
+  </div>
+
+  <div class='input-day-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :day,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2000,
+                    end_year: (Time.now.year ),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+
+  <div class="field">
+    <%= f.label :manager, "担当者" %><br />
+    <%= f.text_field :manager, class: :form__text, id:"customer_manager" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hoge, "カット" %><br />
+    <%= f.label :cut_id, "カット" %><br />
     <%= f.collection_select(:cut_id, Cut.all, :id, :name, {}, {class:"cut-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "カラー" %><br />
+    <%= f.label :color_id, "カラー" %><br />
     <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"color-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "パーマ" %><br />
+    <%= f.label :parm_id, "パーマ" %><br />
     <%= f.collection_select(:parm_id, Parm.all, :id, :name, {}, {class:"parm-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "トリートメント" %><br />
+    <%= f.label :treatment_id, "トリートメント" %><br />
     <%= f.collection_select(:treatment_id, Treatment.all, :id, :name, {}, {class:"treatment-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
+    <%= f.label :description, "備考" %><br />
+    <%= f.text_area :description, class: :form__text, id:"customer_others" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image, id:"customer_image" %>
   </div>
 
   <div class="actions">
