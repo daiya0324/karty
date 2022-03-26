@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
 
   def index
+    @records = Record.all
   end
 
   def new
@@ -14,6 +15,14 @@ class RecordsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @record = Record.find(params[:id])
+  end
+
+  def search
+    @record = Record.search(params[:keyword])
   end
 
   private

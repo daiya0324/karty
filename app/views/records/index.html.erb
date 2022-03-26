@@ -6,8 +6,12 @@
         <%# <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
       <%# </div> %>
     <%# // ログインしているときは上記を表示する %>
+    <%= form_with(url: search_records_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: 'record', collection: @records %>
     </div>
   </div>
 </main>

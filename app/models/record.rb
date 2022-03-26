@@ -9,4 +9,12 @@ class Record < ApplicationRecord
   belongs_to :color
   belongs_to :parm
   belongs_to :treatment
+
+  def self.search(search)
+    if search != ""
+      Record.where('name LIKE(?)', "%#{search}%")
+    else
+      Record.all
+    end
+  end
 end

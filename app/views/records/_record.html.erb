@@ -1,10 +1,12 @@
+<% if record.image.attached? %>
 <div class="card">
-  <%= link_to image_tag("プロトタイプの画像", class: :card__img ), root_path%>
+  <%= link_to image_tag(record.image, class: :card__img ), root_path %>
+<% end %>
   <div class="card__body">
-    <%= link_to "プロトタイプのタイトル", root_path, class: :card__title%>
+    <%= link_to "#{record.name}様", record_path(record.id), class: :card__title%>
     <p class="card__summary">
-      <%= "プロトタイプのキャッチコピー" %>
+      <%= record.manager %>
     </p>
-    <%= link_to "by プロトタイプの投稿者名", root_path, class: :card__user %>
+    <%= record.day %>
   </div>
 </div>
