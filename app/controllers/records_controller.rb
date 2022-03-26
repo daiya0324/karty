@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
 
   def index
+    @records = Record.all
   end
 
   def new
@@ -16,6 +17,11 @@ class RecordsController < ApplicationController
     end
   end
 
+  def show
+    @record = Record.find(params[:id])
+  end
+
+  
   private
 
   def record_params
