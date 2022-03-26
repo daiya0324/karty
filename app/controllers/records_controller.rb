@@ -21,7 +21,10 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
   end
 
-  
+  def search
+    @record = Record.search(params[:keyword])
+  end
+
   private
 
   def record_params
