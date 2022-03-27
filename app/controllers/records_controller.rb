@@ -21,6 +21,25 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
   end
 
+  def edit
+    @record = Record.find(params[:id])
+  end
+
+  def update
+    @record = Record.find(params[:id])
+    if @record.update(record_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    record = Record.find(params[:id])
+    record.destroy
+    redirect_to action: :index
+  end
+
   def search
     @record = Record.search(params[:keyword])
   end
