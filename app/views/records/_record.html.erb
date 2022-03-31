@@ -1,12 +1,7 @@
-<% if record.image.attached? %>
-  <div class="card">
-    <%= link_to image_tag(record.image, class: :card__img ), root_path %>
-  <% end %>
-  <div class="card__body">
-    <%= link_to "#{record.name}様", record_path(record.id), class: :card__title%>
-    <p class="card__summary">
-      <%= record.manager %>
-    </p>
-    <%= record.day %>
-  </div>
-</div>
+<% if user_signed_in? && current_user.id == record.user_id %>
+<th scope="row"></th>
+<td><%= link_to "#{record.name}様", record_path(record.id), class: :col%></td>
+<td><%= record.manager %></td>
+<td><%= record.day %></td>
+</tr>
+<% end %>
