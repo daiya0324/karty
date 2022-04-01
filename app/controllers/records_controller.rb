@@ -1,5 +1,7 @@
 class RecordsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index]
+  before_action :set_tweet, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :show, :update, :destroy]
   def index
     @records = Record.all
   end
@@ -18,15 +20,12 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
   end
 
   def edit
-    @record = Record.find(params[:id])
   end
 
   def update
-    @record = Record.find(params[:id])
     if @record.update(record_params)
       redirect_to action: :show
     else
@@ -35,8 +34,7 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-    record = Record.find(params[:id])
-    record.destroy
+    @record.destroy
     redirect_to action: :index
   end
 
@@ -50,4 +48,11 @@ class RecordsController < ApplicationController
     params.require(:record).permit(:image, :name, :description, :cut_id, :color_id, :parm_id, :treatment_id, :day, :manager).merge(user_id: current_user.id)
   end
   
+  def set_tweet
+    @record = Record.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index if current_user.id != @record.user_id
+  end
 end

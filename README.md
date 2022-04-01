@@ -21,7 +21,7 @@ https://docs.google.com/spreadsheets/d/17dFt9b0tOfj8iRsoqt9Br65rehMz3ddHS9eg1Pcd
 # 実装した機能についての画像やGIFおよびその説明
 
 # 実装予定の機能
-顧客情報管理機能を実装予定。
+顧客プロフィール管理機能を実装予定。
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/ac7cec91cdfc7ba25fc7c5bfacc45581.png)](https://gyazo.com/ac7cec91cdfc7ba25fc7c5bfacc45581)
@@ -39,3 +39,5 @@ https://docs.google.com/spreadsheets/d/17dFt9b0tOfj8iRsoqt9Br65rehMz3ddHS9eg1Pcd
 # ローカルでの動作環境
 
 # 工夫したポイント
+顧客の個人情報などが記録されるため外部の人間に閲覧されることがないよう条件分岐を使用し表示される範囲を制限した。
+顧客情報を検索により簡単に見つけることができる様にした。
