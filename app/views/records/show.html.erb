@@ -4,7 +4,7 @@
       <p class="prototype__hedding">
         <%= "#{@record.name}様" %>
       </p>
-      <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %>
+      <%= link_to @record.manager, root_path, class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <div class="prototype__manage">
         <%= link_to "編集する", edit_record_path, class: :prototype__btn %>
