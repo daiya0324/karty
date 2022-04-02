@@ -5,7 +5,13 @@ karty
 # URL
 https://karty-37557.herokuapp.com/
 # テスト用アカウント
+・Basic認証パスワード：2222
 
+・Basic認証ID：admin
+
+・メールアドレス：test@test
+
+・パスワード：111aaa
 # 利用方法
 ## 施術記録投稿
 ・トップページのヘッダーからユーザー登録を行う
@@ -38,9 +44,13 @@ https://docs.google.com/spreadsheets/d/17dFt9b0tOfj8iRsoqt9Br65rehMz3ddHS9eg1Pcd
 
 # ローカルでの動作環境
 以下のコマンドを順に実行。
+
 % git clone https://github.com/daiya0324/karty.git
+
 % cd karty
+
 % bundle install
+
 % yarn install
 # 工夫したポイント
 顧客の個人情報などが記録されるため外部の人間に閲覧されることがないよう条件分岐を使用し表示される範囲を制限した。
