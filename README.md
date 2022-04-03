@@ -24,10 +24,15 @@ https://karty-37557.herokuapp.com/
 https://docs.google.com/spreadsheets/d/17dFt9b0tOfj8iRsoqt9Br65rehMz3ddHS9eg1Pcd3Hw/edit#gid=1785908763
 
 
-# 実装した機能についての画像やGIFおよびその説明
+
 
 # 実装予定の機能
-顧客プロフィール管理機能を実装予定。
+・顧客プロフィール管理機能
+
+・来店日時順に表示する機能
+
+・担当者を選択するとその担当者の顧客のみが表示される機能
+
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/ac7cec91cdfc7ba25fc7c5bfacc45581.png)](https://gyazo.com/ac7cec91cdfc7ba25fc7c5bfacc45581)
