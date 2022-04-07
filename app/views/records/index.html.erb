@@ -5,6 +5,14 @@
       <%= form.submit "検索" %>
     <% end %>
     <table class="table">
+    <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">氏名</th>
+      <th scope="col">担当者</th>
+      <th scope="col">来店日</th>
+    </tr>
+  </thead>
       <thead>
         <%= render partial: 'record', collection: @records %>
       </thead>
