@@ -3,6 +3,14 @@
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 <table class="table">
+<thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">氏名</th>
+      <th scope="col">担当者</th>
+      <th scope="col">来店日</th>
+    </tr>
+  </thead>
   <thead>
     <% @record.each do |record| %>
       <%= render partial: "record", locals: { record: record } %>
