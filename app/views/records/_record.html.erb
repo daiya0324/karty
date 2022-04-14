@@ -1,6 +1,6 @@
 <% if user_signed_in? && current_user.id == record.user_id %>
 <th scope="row"></th>
-<td><%= link_to "#{record.name}様", record_path(record.id), class: :col%></td>
+<td><%= link_to "#{record.name}様", record_path(record.id)%></td>
 <td><%= record.manager %></td>
 <td><%= record.day %></td>
 </tr>
