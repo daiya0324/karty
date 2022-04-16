@@ -3,7 +3,7 @@ class RecordsController < ApplicationController
   before_action :set_tweet, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, only: [:edit, :show, :update, :destroy]
   def index
-    @records = Record.all
+    @records = Record.order("day DESC")
   end
 
   def new
