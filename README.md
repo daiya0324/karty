@@ -29,8 +29,6 @@ https://docs.google.com/spreadsheets/d/17dFt9b0tOfj8iRsoqt9Br65rehMz3ddHS9eg1Pcd
 # 実装予定の機能
 ・顧客プロフィール管理機能
 
-・来店日時順に表示する機能
-
 ・担当者を選択するとその担当者の顧客のみが表示される機能
 
 
